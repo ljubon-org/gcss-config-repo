@@ -9,9 +9,9 @@ on:
 
 jobs:
   import-repo:
-    uses: ljubon-org/github-terraformer/.github/workflows/import.yaml@main
+    uses: G-Research/github-terraformer/.github/workflows/import.yaml@set-public-provider
     with:
       repo_name: ${{ github.event.inputs.repo_name }}
-      gcss_ref: main
+      gcss_ref: set-public-provider
     secrets:
       app_private_key: ${{ secrets.APP_PRIVATE_KEY }}

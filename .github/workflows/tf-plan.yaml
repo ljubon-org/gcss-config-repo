@@ -8,10 +8,10 @@ on:
 
 jobs:
   terraform-plan:
-    uses: ljubon-org/github-terraformer/.github/workflows/tf-plan.yaml@main
+    uses: G-Research/github-terraformer/.github/workflows/tf-plan.yaml@set-public-provider
     with:
       commit_sha: ${{ github.event.workflow_run.head_sha }}
-      gcss_ref: main
+      gcss_ref: set-public-provider
       tfc_org: "ljubo-demo" # FIXME:
     secrets:
       app_private_key: ${{ secrets.APP_PRIVATE_KEY }}
