@@ -11,4 +11,4 @@ jobs:
     uses: G-Research/github-terraformer/.github/workflows/drift-check.yaml@main
     with:
       gcss_ref: main
-      tfc_org: ${{ vars.TFC_ORG }}
+      tfc_org: "ljubo-demo" # FIXME: now
