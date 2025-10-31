@@ -9,6 +9,6 @@
 #
 
 apps:
-   - app_id: 2210991
-     app_slug: gcss-admin-bypasser
-     app_owner: ljubon-org
+  - app_id: 2210991
+    app_slug: gcss-admin-bypasser
+    app_owner: ljubon-org
