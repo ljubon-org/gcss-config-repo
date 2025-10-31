@@ -1,0 +1,25 @@
+name: Create Fork
+
+on:
+  workflow_dispatch:
+    inputs:
+      upstream_repo:
+        description: "The upstream repository to fork (format: owner/repo)"
+        required: true
+      fork_name:
+        description: "The name for the fork (defaults to the upstream repo name)"
+        required: false
+      default_branch_only:
+        description: "Whether to fork only the default branch (true/false)"
+        required: false
+        default: "true"
+
+jobs:
+  create-fork:
+    uses: G-Research/github-terraformer/.github/workflows/create-fork.yaml@main
+    with:
+      upstream_repo: ${{ github.event.inputs.upstream_repo }}
+      fork_name: ${{ github.event.inputs.fork_name }}
+      default_branch_only: ${{ github.event.inputs.default_branch_only }}
+    secrets:
+      app_private_key: ${{ secrets.APP_PRIVATE_KEY }}

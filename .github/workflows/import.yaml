@@ -1,0 +1,17 @@
+name: Import single repository
+
+on:
+  workflow_dispatch:
+    inputs:
+      repo_name:
+        description: 'The name of the repository to import'
+        required: true
+
+jobs:
+  import-repo:
+    uses: G-Research/github-terraformer/.github/workflows/import.yaml@main
+    with:
+      repo_name: ${{ github.event.inputs.repo_name }}
+      gcss_ref: main
+    secrets:
+      app_private_key: ${{ secrets.APP_PRIVATE_KEY }}

@@ -1,0 +1,19 @@
+name: Terraform Plan
+
+on:
+  workflow_run:
+    workflows: [ "Bootstrap" ]
+    types:
+      - requested
+
+jobs:
+  terraform-plan:
+    uses: G-Research/github-terraformer/.github/workflows/tf-plan.yaml@main
+    with:
+      commit_sha: ${{ github.event.workflow_run.head_sha }}
+      gcss_ref: main
+      tfc_org: ${{ vars.TFC_ORG }}
+    secrets:
+      app_private_key: ${{ secrets.APP_PRIVATE_KEY }}
+      gh_token: ${{ secrets.GITHUB_TOKEN }}
+      tfc_token: ${{ secrets.TFC_TOKEN }}

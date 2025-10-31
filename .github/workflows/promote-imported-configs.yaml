@@ -1,0 +1,21 @@
+name: Promote Imported Configs
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [ main ]
+    paths:
+      - 'importer_tmp_dir/**'
+
+jobs:
+  promote:
+    if: github.event.pull_request.merged == true
+    uses: G-Research/github-terraformer/.github/workflows/promote-imported-configs.yaml@main
+    with:
+      commit_sha: ${{ github.event.pull_request.merge_commit_sha }}
+      gcss_ref: main
+      pr_number: ${{ github.event.pull_request.number }}
+      tfc_org: ${{ vars.TFC_ORG }}
+    secrets:
+      app_private_key: ${{ secrets.APP_PRIVATE_KEY }}
+      tfc_token: ${{ secrets.TFC_TOKEN }}

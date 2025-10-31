@@ -1,0 +1,11 @@
+name: Bootstrap
+
+on:
+  pull_request:
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo
+        run: echo Bootstrap

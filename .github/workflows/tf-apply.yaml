@@ -1,0 +1,18 @@
+name: Terraform apply
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - 'importer_tmp_dir/**'
+
+jobs:
+  terraform-apply:
+    uses: G-Research/github-terraformer/.github/workflows/tf-apply.yaml@main
+    with:
+      commit_sha: ${{ github.sha }}
+      gcss_ref: main
+      tfc_org: ${{ vars.TFC_ORG }}
+    secrets:
+      gh_token: ${{ secrets.GITHUB_TOKEN }}
+      tfc_token: ${{ secrets.TFC_TOKEN }}

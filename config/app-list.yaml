@@ -1,0 +1,10 @@
+# List of Github applications used to map bypass actors to
+# Each item in the list is an object with app_id, app_slug, app_owner
+# All can be retrieved from the Github API, and/or the Github UI
+# eg:
+#apps:
+#  - app_id: 123456789
+#    app_slug: my-app
+#    app_owner: my-org
+#
+apps: []

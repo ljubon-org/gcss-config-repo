@@ -1,0 +1,14 @@
+name: "Drift Check"
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  drift-check:
+    secrets:
+      tfc_token: ${{ secrets.TFC_TOKEN }}
+    uses: G-Research/github-terraformer/.github/workflows/drift-check.yaml@main
+    with:
+      gcss_ref: main
+      tfc_org: ${{ vars.TFC_ORG }}
