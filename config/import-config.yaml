@@ -4,10 +4,9 @@
 # The list is a list of repository names in the format "owner/repo".
 # The list should be set if selected_repos is not.
 #
-ignored_repos: [
-  "gcss-config-repo",
-  "github-terraformer"
-]
+ignored_repos:
+  - "ljubon-org/gcss-config-repo"
+  - "ljubon-org/github-terraformer"
 
 # List of repositories to be imported by the importer.
 #
