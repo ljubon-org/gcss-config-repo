@@ -8,7 +8,7 @@ on:
 
 jobs:
   terraform-plan:
-    uses: G-Research/github-terraformer/.github/workflows/tf-plan.yaml@main
+    uses: ljubon-org/github-terraformer/.github/workflows/tf-plan.yaml@main
     with:
       commit_sha: ${{ github.event.workflow_run.head_sha }}
       gcss_ref: main
