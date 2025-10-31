@@ -8,7 +8,7 @@ on:
 
 jobs:
   terraform-apply:
-    uses: G-Research/github-terraformer/.github/workflows/tf-apply.yaml@main
+    uses: ljubon-org/github-terraformer/.github/workflows/tf-apply.yaml@main
     with:
       commit_sha: ${{ github.sha }}
       gcss_ref: main
