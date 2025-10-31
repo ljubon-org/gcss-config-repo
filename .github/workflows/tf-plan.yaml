@@ -12,7 +12,7 @@ jobs:
     with:
       commit_sha: ${{ github.event.workflow_run.head_sha }}
       gcss_ref: main
-      tfc_org: "ljubo-demo" # FIXME: now
+      tfc_org: "ljubo-demo" # FIXME:
     secrets:
       app_private_key: ${{ secrets.APP_PRIVATE_KEY }}
       gh_token: ${{ secrets.GITHUB_TOKEN }}
