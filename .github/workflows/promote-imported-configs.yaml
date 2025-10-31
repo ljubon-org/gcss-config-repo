@@ -15,7 +15,7 @@ jobs:
       commit_sha: ${{ github.event.pull_request.merge_commit_sha }}
       gcss_ref: main
       pr_number: ${{ github.event.pull_request.number }}
-      tfc_org: ${{ vars.TFC_ORG }}
+      tfc_org: "ljubo-demo" # FIXME: now
     secrets:
       app_private_key: ${{ secrets.APP_PRIVATE_KEY }}
       tfc_token: ${{ secrets.TFC_TOKEN }}
