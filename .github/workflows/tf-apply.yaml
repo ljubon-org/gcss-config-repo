@@ -12,7 +12,7 @@ jobs:
     with:
       commit_sha: ${{ github.sha }}
       gcss_ref: main
-      tfc_org: ${{ vars.TFC_ORG }}
+      tfc_org: "ljubo-demo" # FIXME: now
     secrets:
       gh_token: ${{ secrets.GITHUB_TOKEN }}
       tfc_token: ${{ secrets.TFC_TOKEN }}
