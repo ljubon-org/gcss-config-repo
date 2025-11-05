@@ -8,7 +8,7 @@ jobs:
   drift-check:
     secrets:
       tfc_token: ${{ secrets.TFC_TOKEN }}
-    uses: G-Research/github-terraformer/.github/workflows/drift-check.yaml@set-public-provider
+    uses: ljubon-org/github-terraformer/.github/workflows/drift-check.yaml@set-public-provider
     with:
       gcss_ref: set-public-provider
       tfc_org: "ljubo-demo" # FIXME: now

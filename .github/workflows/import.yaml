@@ -9,7 +9,7 @@ on:
 
 jobs:
   import-repo:
-    uses: G-Research/github-terraformer/.github/workflows/import.yaml@set-public-provider
+    uses: ljubon-org/github-terraformer/.github/workflows/import.yaml@set-public-provider
     with:
       repo_name: ${{ github.event.inputs.repo_name }}
       gcss_ref: set-public-provider

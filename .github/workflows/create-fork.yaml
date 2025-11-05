@@ -16,7 +16,7 @@ on:
 
 jobs:
   create-fork:
-    uses: G-Research/github-terraformer/.github/workflows/create-fork.yaml@set-public-provider
+    uses: ljubon-org/github-terraformer/.github/workflows/create-fork.yaml@set-public-provider
     with:
       upstream_repo: ${{ github.event.inputs.upstream_repo }}
       fork_name: ${{ github.event.inputs.fork_name }}
