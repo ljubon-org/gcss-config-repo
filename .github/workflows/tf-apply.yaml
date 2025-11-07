@@ -8,10 +8,10 @@ on:
 
 jobs:
   terraform-apply:
-    uses: ljubon-org/github-terraformer/.github/workflows/tf-apply.yaml@set-public-provider
+    uses: ljubon-org/github-terraformer/.github/workflows/tf-apply.yaml@fix-empty-state-import
     with:
       commit_sha: ${{ github.sha }}
-      gcss_ref: set-public-provider
+      gcss_ref: fix-empty-state-import
       tfc_org: "ljubo-demo" # FIXME: now
     secrets:
       gh_token: ${{ secrets.GITHUB_TOKEN }}

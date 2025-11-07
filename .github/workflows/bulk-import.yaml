@@ -5,8 +5,8 @@ on:
 
 jobs:
   bulk-import-repos:
-    uses: ljubon-org/github-terraformer/.github/workflows/bulk-import.yaml@set-public-provider
+    uses: ljubon-org/github-terraformer/.github/workflows/bulk-import.yaml@fix-empty-state-import
     with:
-      gcss_ref: set-public-provider
+      gcss_ref: fix-empty-state-import
     secrets:
       app_private_key: ${{ secrets.APP_PRIVATE_KEY }}

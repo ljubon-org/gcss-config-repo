@@ -10,10 +10,10 @@ on:
 jobs:
   promote:
     if: github.event.pull_request.merged == true
-    uses: ljubon-org/github-terraformer/.github/workflows/promote-imported-configs.yaml@set-public-provider
+    uses: ljubon-org/github-terraformer/.github/workflows/promote-imported-configs.yaml@fix-empty-state-import
     with:
       commit_sha: ${{ github.event.pull_request.merge_commit_sha }}
-      gcss_ref: set-public-provider
+      gcss_ref: fix-empty-state-import
       pr_number: ${{ github.event.pull_request.number }}
       tfc_org: "ljubo-demo" # FIXME: now
     secrets:
