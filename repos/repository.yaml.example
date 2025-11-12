@@ -140,3 +140,53 @@ rulesets:
 # SECURITY SETTINGS (Required)
 # =============================================================================
 vulnerability_alerts_enabled: true
+
+# =============================================================================
+# ENVIRONMENTS (Optional)
+# =============================================================================
+# Configure repository environments for deployment protection
+#
+# IMPORTING EXISTING ENVIRONMENTS:
+#   To import existing environments from GitHub, enable in config/import-config.yaml:
+#     feature_github_environment: true
+#   Then run: go run main.go import owner/repo
+#   OR:       go run main.go bulk-import
+#   The same compiled binary reads the config file dynamically - no rebuild needed!
+#
+# CREATING NEW ENVIRONMENTS:
+#   Simply add the environments configuration below - they will be created during provisioning.
+#
+# Note: Secrets are NOT managed through this configuration - they must be
+# managed separately through GitHub UI or API.
+#
+# For detailed examples and field reference, see:
+#   ../github-terraformer/docs/github_environments.md
+#   ../github-terraformer/docs/DEVELOPERS_GUIDE.md#environment-configuration
+#
+#environments:
+#  - environment: production
+#    wait_timer: 30000  # Wait time in milliseconds before allowing deployments
+#    can_admins_bypass: false  # Whether admins can bypass deployment protections
+#    prevent_self_review: true  # Prevent users from approving their own deployments
+#    reviewers:
+#      users:  # List of GitHub usernames who can approve deployments
+#        - octocat
+#        - hubot
+#      teams:  # List of team slugs who can approve deployments
+#        - platform-team
+#        - security-team
+#    deployment_branch_policy:
+#      protected_branches: true  # Only allow deployments from protected branches
+#      custom_branch_policies: false  # Whether to use custom branch patterns
+#
+#  - environment: staging
+#    can_admins_bypass: true
+#    prevent_self_review: false
+#    deployment_branch_policy:
+#      protected_branches: false
+#      custom_branch_policies: false
+#
+#  - environment: development
+#    deployment_branch_policy:
+#      protected_branches: false
+#      custom_branch_policies: false
