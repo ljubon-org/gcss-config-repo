@@ -140,3 +140,59 @@ rulesets:
 # SECURITY SETTINGS (Required)
 # =============================================================================
 vulnerability_alerts_enabled: true
+
+# =============================================================================
+# ENVIRONMENTS (Optional - Auto-Detected)
+# =============================================================================
+# Configure repository environments for deployment protection
+#
+# HOW IT WORKS:
+#   1. IMPORT: Environments are automatically imported if they exist in GitHub
+#   2. CONTROL: Use 'manage_environments' to enable/disable Terraform management
+#   3. ROLLOUT: Enable management repo-by-repo for gradual adoption
+#
+# GRADUAL ROLLOUT STRATEGY:
+#   Step 1: Import all repos - environments are imported automatically
+#   Step 2: Set manage_environments: false for repos you don't want to manage yet
+#   Step 3: Enable management repo-by-repo by setting manage_environments: true
+#   Step 4: Terraform will manage only repos where manage_environments: true
+#
+# EXAMPLE - Disable management for this repo:
+#   manage_environments: false  # Terraform won't manage (use GitHub UI instead)
+#   environments:              # Still visible, but not managed
+#     - environment: production
+#       ...
+#
+# Note: Secrets are NOT managed through this configuration - they must be
+# managed separately through GitHub UI or API.
+#
+# For detailed examples and field reference, see:
+#   ../github-terraformer/docs/github_environments.md
+#   ../github-terraformer/docs/DEVELOPERS_GUIDE.md#environment-configuration
+#
+# Control flag (optional - default: true if environments exist)
+#manage_environments: true  # Set to false to disable Terraform management
+#
+# Environment configuration
+#environments:
+#  - environment: production
+#    wait_timer: 300  # Wait time in seconds before allowing deployments (300 = 5 minutes, max 43200 = 12 hours)
+#    can_admins_bypass: false  # Whether admins can bypass deployment protections
+#    prevent_self_review: true  # Prevent users from approving their own deployments
+#    reviewers:
+#      users:  # List of GitHub usernames who can approve deployments
+#        - octocat
+#        - hubot
+#      teams:  # List of team slugs who can approve deployments
+#        - platform-team
+#        - security-team
+#    deployment_branch_policy:
+#      protected_branches: true  # Only allow deployments from protected branches
+#
+#  - environment: staging
+#    can_admins_bypass: true
+#    prevent_self_review: false
+#    # No deployment_branch_policy = any branch can deploy
+#
+#  - environment: development
+#    # No deployment_branch_policy = any branch can deploy

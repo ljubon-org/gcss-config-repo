@@ -16,7 +16,7 @@ on:
 
 jobs:
   create-fork:
-    uses: ljubon-org/github-terraformer/.github/workflows/create-fork.yaml@fix-empty-state-import
+    uses: ljubon-org/github-terraformer/.github/workflows/create-fork.yaml@test-env
     with:
       upstream_repo: ${{ github.event.inputs.upstream_repo }}
       fork_name: ${{ github.event.inputs.fork_name }}
