@@ -9,9 +9,9 @@ on:
 
 jobs:
   import-repo:
-    uses: ljubon-org/github-terraformer/.github/workflows/import.yaml@fix-empty-state-import
+    uses: ljubon-org/github-terraformer/.github/workflows/import.yaml@test-env
     with:
       repo_name: ${{ github.event.inputs.repo_name }}
-      gcss_ref: fix-empty-state-import
+      gcss_ref: test-env
     secrets:
       app_private_key: ${{ secrets.APP_PRIVATE_KEY }}

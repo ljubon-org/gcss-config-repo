@@ -27,3 +27,31 @@ ignored_repos:
 # The default page size is 100.
 #
 #page_size: 100
+
+# =============================================================================
+# FEATURE FLAGS
+# =============================================================================
+# All feature flags follow the pattern: feature_<feature_name> = true|false
+# Feature flags control importer behavior and are read dynamically from this file.
+# The same compiled binary works for all configurations - just update this file.
+#
+# Feature flags are disabled by default (false) to ensure backward compatibility
+# and prevent unintended changes to existing repository configurations.
+#
+# Usage:
+#   - For CLI: Both `import` and `bulk-import` commands read this file automatically
+#   - For CI/CD: Simply commit changes to this file - no code changes needed
+#   - Default config path: ./import-config.yaml
+#   - Custom path: Use --config/-c flag: `go run main.go import owner/repo -c /path/to/config.yaml`
+#
+# Available feature flags:
+#
+# feature_github_environment: Import GitHub repository environments
+#   - When enabled, the importer fetches and includes environment configurations
+#     (reviewers, wait timers, deployment branch policies, etc.) in generated YAML
+#   - Environment secrets are NEVER imported
+#   - Default: false
+#   - This ensures existing repos managed in code won't be affected unless explicitly enabled
+#
+
+feature_github_environment: true
