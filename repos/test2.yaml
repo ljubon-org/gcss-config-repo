@@ -1,4 +1,4 @@
-visibility: private
+visibility: public
 default_branch: main
 has_issues: true
 has_projects: true
@@ -19,3 +19,14 @@ is_template: false
 archived: false
 has_discussions: false
 vulnerability_alerts_enabled: true
+
+environments:
+  - environment: test
+    can_admins_bypass: true
+    prevent_self_review: true
+    reviewers:
+      users:
+        - ljubon
+        - ljuboops257
+    deployment_branch_policy:
+      protected_branches: true

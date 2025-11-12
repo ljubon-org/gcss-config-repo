@@ -19,3 +19,9 @@ is_template: false
 archived: false
 has_discussions: false
 vulnerability_alerts_enabled: true
+
+manage_environments: true
+environments:
+  - environment: staging
+    deployment_branch_policy:
+      protected_branches: true

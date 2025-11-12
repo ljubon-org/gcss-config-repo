@@ -8,10 +8,10 @@ on:
 
 jobs:
   terraform-plan:
-    uses: ljubon-org/github-terraformer/.github/workflows/tf-plan.yaml@fix-empty-state-import
+    uses: ljubon-org/github-terraformer/.github/workflows/tf-plan.yaml@test-env
     with:
       commit_sha: ${{ github.event.workflow_run.head_sha }}
-      gcss_ref: fix-empty-state-import
+      gcss_ref: test-env
       tfc_org: "ljubo-demo" # FIXME:
     secrets:
       app_private_key: ${{ secrets.APP_PRIVATE_KEY }}

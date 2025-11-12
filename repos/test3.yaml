@@ -20,3 +20,15 @@ is_template: false
 archived: false
 has_discussions: false
 vulnerability_alerts_enabled: true
+
+manage_environments: true
+environments:
+  - environment: production
+    can_admins_bypass: true
+    prevent_self_review: true
+    reviewers:
+      users:
+        - ljubon
+        - ljuboops257
+    deployment_branch_policy:
+      protected_branches: false
