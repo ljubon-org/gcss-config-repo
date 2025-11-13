@@ -22,12 +22,12 @@ has_discussions: false
 vulnerability_alerts_enabled: true
 manage_environments: true
 environments:
-    - environment: stage
-      can_admins_bypass: true
-      prevent_self_review: true
-      reviewers:
-        users:
-            - ljuboops257
-            - ljubon
-      deployment_branch_policy:
-        protected_branches: true
+  - environment: stage
+    can_admins_bypass: true
+    prevent_self_review: true
+    reviewers:
+      users:
+        - ljuboops257
+        - ljubon
+    deployment_branch_policy:
+      protected_branches: true
