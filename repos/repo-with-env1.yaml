@@ -1,4 +1,5 @@
 visibility: private
+homepage_url: ""
 default_branch: main
 has_issues: true
 has_projects: true

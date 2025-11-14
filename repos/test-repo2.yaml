@@ -1,5 +1,6 @@
 description: Test repository
 visibility: public
+homepage_url: ""
 default_branch: main
 has_issues: true
 has_projects: true
