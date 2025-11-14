@@ -42,4 +42,4 @@ ignored_repos:
 #   - This ensures existing repos managed in code won't be affected unless explicitly enabled
 #
 
-# feature_github_environment: false
+feature_github_environment: false
