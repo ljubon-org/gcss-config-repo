@@ -20,3 +20,20 @@ is_template: false
 archived: false
 has_discussions: false
 vulnerability_alerts_enabled: true
+environments:
+  - environment: e2423
+    can_admins_bypass: false
+    prevent_self_review: true
+    reviewers:
+      users:
+        - ljubon
+    deployment_branch_policy:
+      protected_branches: true
+  - environment: newenv2
+    can_admins_bypass: true
+    prevent_self_review: true
+    reviewers:
+      users:
+        - ljuboops257
+    deployment_branch_policy:
+      protected_branches: true
