@@ -1,4 +1,4 @@
-visibility: private
+visibility: public
 default_branch: main
 has_issues: true
 has_projects: true
@@ -19,9 +19,6 @@ is_template: false
 archived: false
 has_discussions: false
 vulnerability_alerts_enabled: true
-
-# Test if i have env will it create in state
-manage_environments: false
 environments:
   - environment: production
     can_admins_bypass: true
