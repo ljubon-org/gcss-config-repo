@@ -19,8 +19,6 @@ is_template: false
 archived: false
 has_discussions: false
 vulnerability_alerts_enabled: true
-
-manage_environments: false
 environments:
   - environment: test
     can_admins_bypass: true

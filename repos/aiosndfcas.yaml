@@ -1,4 +1,4 @@
-visibility: private
+visibility: public
 default_branch: main
 has_issues: true
 has_projects: true

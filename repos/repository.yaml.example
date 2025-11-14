@@ -4,7 +4,7 @@
 # BASIC REPOSITORY SETTINGS (Required)
 # =============================================================================
 description: "REPLACE_WITH_REPOSITORY_DESCRIPTION"
-visibility: private   # Options: public, private, internal - private default
+visibility: public   # Options: public, private, internal - private default
 homepage_url: ""      # Optional: URL to project homepage
 default_branch: main  # Most common: main
 
@@ -147,31 +147,18 @@ vulnerability_alerts_enabled: true
 # Configure repository environments for deployment protection
 #
 # HOW IT WORKS:
-#   1. IMPORT: Environments are automatically imported if they exist in GitHub
-#   2. CONTROL: Use 'manage_environments' to enable/disable Terraform management
-#   3. ROLLOUT: Enable management repo-by-repo for gradual adoption
+#   1. IMPORT: Environments are automatically imported if feature_github_environment: true in import-config.yaml
+#   2. CONTROL: All imported environments are automatically managed by Terraform
 #
-# GRADUAL ROLLOUT STRATEGY:
-#   Step 1: Import all repos - environments are imported automatically
-#   Step 2: Set manage_environments: false for repos you don't want to manage yet
-#   Step 3: Enable management repo-by-repo by setting manage_environments: true
-#   Step 4: Terraform will manage only repos where manage_environments: true
-#
-# EXAMPLE - Disable management for this repo:
-#   manage_environments: false  # Terraform won't manage (use GitHub UI instead)
-#   environments:              # Still visible, but not managed
-#     - environment: production
-#       ...
-#
-# Note: Secrets are NOT managed through this configuration - they must be
-# managed separately through GitHub UI or API.
+# Note:
+# - Environments are only imported when feature_github_environment: true in import-config.yaml
+# - Once imported, environments are always managed by Terraform
+# - To exclude environments from management, remove them from this YAML file
+# - Secrets are NOT managed through this configuration - manage them via GitHub UI or API
 #
 # For detailed examples and field reference, see:
 #   ../github-terraformer/docs/github_environments.md
 #   ../github-terraformer/docs/DEVELOPERS_GUIDE.md#environment-configuration
-#
-# Control flag (optional - default: true if environments exist)
-#manage_environments: true  # Set to false to disable Terraform management
 #
 # Environment configuration
 #environments:

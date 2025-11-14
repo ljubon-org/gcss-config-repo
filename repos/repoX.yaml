@@ -20,5 +20,3 @@ archived: false
 has_discussions: false
 vulnerability_alerts_enabled: true
 
-# Test if i have env will it create in state
-manage_environments: true
