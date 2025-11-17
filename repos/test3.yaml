@@ -45,3 +45,5 @@ environments:
     reviewers:
       users:
         - ljubon
+    deployment_branch_policy:
+      protected_branches: true
