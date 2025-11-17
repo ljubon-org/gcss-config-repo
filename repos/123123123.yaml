@@ -33,5 +33,3 @@ environments:
       selected_branches_or_tags_policy:
         branch_patterns:
           - main*
-        tag_patterns:
-          - v*
