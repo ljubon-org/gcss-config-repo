@@ -34,15 +34,6 @@ environments:
           - branchName1
         tag_patterns:
           - tagName1
-  - environment: newenv2
-    wait_timer: 14
-    can_admins_bypass: true
-    prevent_self_review: true
-    reviewers:
-      users:
-        - ljuboops257
-    deployment_ref_policy:
-      protected_branches_policy: true
   - environment: tets32123
     wait_timer: 13
     can_admins_bypass: true
@@ -51,4 +42,7 @@ environments:
       users:
         - ljubon
     deployment_ref_policy:
-      protected_branches_policy: true
+      protected_branches_policy: false
+      selected_branches_or_tags_policy:
+        branch_patterns:
+          - new1
