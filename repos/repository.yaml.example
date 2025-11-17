@@ -180,8 +180,8 @@ vulnerability_alerts_enabled: true
 #    can_admins_bypass: true
 #    prevent_self_review: false
 #    deployment_ref_policy:
-#      protected_branches_policy: false  # Allow deployments from any branch
-#      selected_branches_or_tags_policy:  # Custom deployment policies (requires protected_branches_policy: false)
+#      protected_branches_policy: false  # Must be false when using custom patterns
+#      selected_branches_or_tags_policy:  # Custom patterns (cannot be used with protected_branches_policy: true)
 #        branch_patterns:  # List of branch patterns that can deploy
 #          - "release/*"
 #          - "hotfix/*"
