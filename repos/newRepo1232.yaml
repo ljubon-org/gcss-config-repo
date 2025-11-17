@@ -32,5 +32,3 @@ environments:
         - team1
       users:
         - ljuboops257
-    deployment_ref_policy:
-      protected_branches_policy: false
