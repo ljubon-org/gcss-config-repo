@@ -142,52 +142,38 @@ rulesets:
 vulnerability_alerts_enabled: true
 
 # =============================================================================
-# ENVIRONMENTS (Optional - Auto-Detected)
+# ENVIRONMENTS (Optional)
 # =============================================================================
-# Configure repository environments for deployment protection
+# Configure deployment environments with protection rules
+# Requires: feature_github_environment: true in import-config.yaml
 #
-# HOW IT WORKS:
-#   1. IMPORT: Environments are automatically imported if feature_github_environment: true in import-config.yaml
-#   2. CONTROL: All imported environments are automatically managed by Terraform
+# DEPLOYMENT POLICY OPTIONS (mutually exclusive):
+#   1. protected_branches_policy: true     - Only protected branches can deploy
+#   2. custom patterns with false          - Specific branch/tag patterns
+#   3. Omit deployment_ref_policy entirely - Any branch can deploy
 #
-# Note:
-# - Environments are only imported when feature_github_environment: true in import-config.yaml
-# - Once imported, environments are always managed by Terraform
-# - To exclude environments from management, remove them from this YAML file
-# - Secrets are NOT managed through this configuration - manage them via GitHub UI or API
+# See: ../github-terraformer/docs/github_environments.md for full guide
 #
-# For detailed examples and field reference, see:
-#   ../github-terraformer/docs/github_environments.md
-#   ../github-terraformer/docs/DEVELOPERS_GUIDE.md#environment-configuration
-#
-# Environment configuration
 #environments:
+#  # Production: Protected branches only
 #  - environment: production
-#    wait_timer: 300  # Wait time in seconds before allowing deployments (300 = 5 minutes, max 43200 = 12 hours)
-#    can_admins_bypass: false  # Whether admins can bypass deployment protections
-#    prevent_self_review: true  # Prevent users from approving their own deployments
+#    wait_timer: 300               # 5 minute wait (max: 43200 = 12 hours)
+#    can_admins_bypass: false      # Admins cannot bypass
+#    prevent_self_review: true     # Cannot approve own deployments
 #    reviewers:
-#      users:  # List of GitHub usernames who can approve deployments
-#        - octocat
-#        - hubot
-#      teams:  # List of team slugs who can approve deployments
-#        - platform-team
-#        - security-team
+#      users: ["octocat"]          # Max 6 combined users + teams
+#      teams: ["platform-team"]
 #    deployment_ref_policy:
-#      protected_branches_policy: true  # Only allow deployments from protected branches
+#      protected_branches_policy: true
 #
+#  # Staging: Custom branch/tag patterns
 #  - environment: staging
-#    can_admins_bypass: true
-#    prevent_self_review: false
 #    deployment_ref_policy:
-#      protected_branches_policy: false  # Must be false when using custom patterns
-#      selected_branches_or_tags_policy:  # Custom patterns (cannot be used with protected_branches_policy: true)
-#        branch_patterns:  # List of branch patterns that can deploy
-#          - "release/*"
-#          - "hotfix/*"
-#        tag_patterns:  # List of tag patterns that can deploy
-#          - "v*"
-#          - "release-*"
+#      protected_branches_policy: false  # REQUIRED false for patterns
+#      selected_branches_or_tags_policy:
+#        branch_patterns: ["release/*", "main"]
+#        tag_patterns: ["v*"]
 #
+#  # Development: Any branch (no restrictions)
 #  - environment: development
 #    # No deployment_ref_policy = any branch can deploy
