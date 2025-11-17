@@ -1,2 +1,4 @@
 .idea
 importer_tmp_dir/*
+!importer_tmp_dir/*.yaml
+!importer_tmp_dir/*.yml
