@@ -27,6 +27,8 @@ environments:
     reviewers:
       users:
         - ljubon
+    deployment_branch_policy:
+      protected_branches: false
     deployment_ref_policy:
       protected_branches_policy: false
       selected_branches_or_tags_policy:
@@ -41,6 +43,8 @@ environments:
     reviewers:
       users:
         - ljuboops257
+    deployment_branch_policy:
+      protected_branches: true
     deployment_ref_policy:
       protected_branches_policy: true
   - environment: tets32123
@@ -50,5 +54,7 @@ environments:
     reviewers:
       users:
         - ljubon
+    deployment_branch_policy:
+      protected_branches: true
     deployment_ref_policy:
       protected_branches_policy: true

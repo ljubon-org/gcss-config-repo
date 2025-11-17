@@ -22,11 +22,14 @@ has_discussions: false
 vulnerability_alerts_enabled: true
 environments:
   - environment: e2423
-    can_admins_bypass: false
+    wait_timer: 4
+    can_admins_bypass: true
     prevent_self_review: true
     reviewers:
       users:
         - ljubon
+    deployment_branch_policy:
+      protected_branches: false
     deployment_ref_policy:
       protected_branches_policy: false
       selected_branches_or_tags_policy:
@@ -41,6 +44,8 @@ environments:
     reviewers:
       users:
         - ljuboops257
+    deployment_branch_policy:
+      protected_branches: true
     deployment_ref_policy:
       protected_branches_policy: true
   - environment: tets32123
@@ -50,5 +55,7 @@ environments:
     reviewers:
       users:
         - ljubon
+    deployment_branch_policy:
+      protected_branches: true
     deployment_ref_policy:
       protected_branches_policy: true
