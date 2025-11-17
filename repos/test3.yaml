@@ -30,6 +30,7 @@ environments:
     deployment_branch_policy:
       protected_branches: true
   - environment: newenv2
+    wait_timer: 14
     can_admins_bypass: true
     prevent_self_review: true
     reviewers:
@@ -37,3 +38,12 @@ environments:
         - ljuboops257
     deployment_branch_policy:
       protected_branches: true
+  - environment: tets32123
+    wait_timer: 13
+    can_admins_bypass: true
+    prevent_self_review: true
+    reviewers:
+      users:
+        - ljubon
+    deployment_branch_policy:
+      protected_branches: false
