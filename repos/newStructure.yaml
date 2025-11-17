@@ -45,6 +45,3 @@ environments:
         - ljubon
     deployment_ref_policy:
       protected_branches_policy: false
-      selected_branches_or_tags_policy:
-        branch_patterns:
-          - new1
