@@ -31,8 +31,8 @@ environments:
     reviewers:
       users:
         - ljubon
-    deployment_ref_policy:
-      protected_branches_policy: true
+    deployment_policy:
+      policy_type: protected_branches
   - environment: staging
     wait_timer: 300
     can_admins_bypass: false
@@ -40,11 +40,10 @@ environments:
     reviewers:
       users:
         - ljubon
-    deployment_ref_policy:
-      protected_branches_policy: false
-      selected_branches_or_tags_policy:
-        branch_patterns:
-          - main
-          - release/*
-        tag_patterns:
-          - v*
+    deployment_policy:
+      policy_type: selected_branches_and_tags
+      branch_patterns:
+        - main
+        - release/*
+      tag_patterns:
+        - v*

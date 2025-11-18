@@ -148,9 +148,9 @@ vulnerability_alerts_enabled: true
 # Requires: feature_github_environment: true in import-config.yaml
 #
 # DEPLOYMENT POLICY OPTIONS (mutually exclusive):
-#   1. protected_branches_policy: true     - Only protected branches can deploy
-#   2. custom patterns with false          - Specific branch/tag patterns
-#   3. Omit deployment_ref_policy entirely - Any branch can deploy
+#   1. policy_type: protected_branches            - Only protected branches can deploy
+#   2. policy_type: selected_branches_and_tags    - Specific branch/tag patterns
+#   3. Omit deployment_policy entirely            - Any branch can deploy
 #
 # See: ../github-terraformer/docs/feature_github_environment.md for full guide
 #
@@ -163,17 +163,17 @@ vulnerability_alerts_enabled: true
 #    reviewers:
 #      users: ["octocat"]          # Max 6 combined users + teams
 #      teams: ["platform-team"]   # ⚠️ Teams MUST have repo access first
-#    deployment_ref_policy:
-#      protected_branches_policy: true
+#    deployment_policy:
+#      policy_type: protected_branches      # Only protected branches can deploy
+#      # branch_patterns and tag_patterns are null/omitted for protected_branches
 #
 #  # Staging: Custom branch/tag patterns
 #  - environment: staging
-#    deployment_ref_policy:
-#      protected_branches_policy: false  # REQUIRED false for patterns
-#      selected_branches_or_tags_policy:
-#        branch_patterns: ["release/*", "main"]
-#        tag_patterns: ["v*"]
+#    deployment_policy:
+#      policy_type: selected_branches_and_tags   # Specific patterns can deploy
+#      branch_patterns: ["release/*", "main"]    # These branches can deploy
+#      tag_patterns: ["v*"]                      # These tags can deploy
 #
 #  # Development: Any branch (no restrictions)
 #  - environment: development
-#    # No deployment_ref_policy = any branch can deploy
+#    # No deployment_policy = any branch can deploy
