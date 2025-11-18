@@ -152,7 +152,7 @@ vulnerability_alerts_enabled: true
 #   2. policy_type: selected_branches_and_tags    - Specific branch/tag patterns
 #   3. Omit deployment_policy entirely            - Any branch can deploy
 #
-# See: ../github-terraformer/docs/feature_github_environment.md for full guide
+# See: ../github-terraformer/docs/FEATURE_GITHUB_ENVIRONMENT.md for full guide
 #
 #environments:
 #  # Production: Protected branches only

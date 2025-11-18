@@ -1,5 +1,6 @@
 description: demo2
 visibility: public
+homepage_url: ""
 default_branch: main
 has_issues: true
 has_projects: true
@@ -27,9 +28,11 @@ environments:
     prevent_self_review: true
     reviewers:
       users:
-        - ljubon
+        - ljuboops257
     deployment_policy:
-      policy_type: protected_branches
+      policy_type: selected_branches_and_tags
+      branch_patterns:
+        - main
   - environment: staging
     wait_timer: 300
     can_admins_bypass: false
