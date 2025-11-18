@@ -162,7 +162,7 @@ vulnerability_alerts_enabled: true
 #    prevent_self_review: true     # Cannot approve own deployments
 #    reviewers:
 #      users: ["octocat"]          # Max 6 combined users + teams
-#      teams: ["platform-team"]
+#      teams: ["platform-team"]   # ⚠️ Teams MUST have repo access first
 #    deployment_ref_policy:
 #      protected_branches_policy: true
 #

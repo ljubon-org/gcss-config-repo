@@ -30,7 +30,6 @@ environments:
     prevent_self_review: true
     reviewers:
       users: ["ljubon"]
-      # teams: ["platform-team"]
     deployment_ref_policy:
       protected_branches_policy: true
 
