@@ -22,8 +22,8 @@ has_discussions: false
 vulnerability_alerts_enabled: true
 environments:
   - environment: production
-    wait_timer: 300
-    can_admins_bypass: false
+    wait_timer: 32
+    can_admins_bypass: true
     prevent_self_review: true
     reviewers:
       users:
