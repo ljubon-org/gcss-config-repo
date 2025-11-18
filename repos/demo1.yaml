@@ -41,8 +41,8 @@ environments:
     prevent_self_review: true
     reviewers:
       users: ["ljubon"]
-      protected_branches_policy: false
     deployment_ref_policy:
+      protected_branches_policy: false
       selected_branches_or_tags_policy:
         branch_patterns: ["release/*", "main"]
         tag_patterns: ["v*"]
