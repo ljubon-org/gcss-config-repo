@@ -21,7 +21,7 @@ is_template: false
 archived: false
 has_discussions: false
 topics:
-  - "demo-topic-1"
+  - demo-topic-1
 vulnerability_alerts_enabled: true
 environments:
   - environment: production
@@ -29,20 +29,22 @@ environments:
     can_admins_bypass: false
     prevent_self_review: true
     reviewers:
-      users: ["ljubon"]
+      users:
+        - ljubon
     deployment_ref_policy:
       protected_branches_policy: true
-
-  # Staging: Custom branch/tag patterns
   - environment: staging
     wait_timer: 300
     can_admins_bypass: false
     prevent_self_review: true
     reviewers:
-      users: ["ljubon"]
-      teams: ["team1"]
+      users:
+        - ljubon
     deployment_ref_policy:
       protected_branches_policy: false
       selected_branches_or_tags_policy:
-        branch_patterns: ["release/*", "main"]
-        tag_patterns: ["v*"]
+        branch_patterns:
+          - main
+          - release/*
+        tag_patterns:
+          - v*
