@@ -152,7 +152,7 @@ vulnerability_alerts_enabled: true
 #   2. custom patterns with false          - Specific branch/tag patterns
 #   3. Omit deployment_ref_policy entirely - Any branch can deploy
 #
-# See: ../github-terraformer/docs/github_environments.md for full guide
+# See: ../github-terraformer/docs/feature_github_environment.md for full guide
 #
 #environments:
 #  # Production: Protected branches only
