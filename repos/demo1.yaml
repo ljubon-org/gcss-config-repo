@@ -25,11 +25,11 @@ topics:
 vulnerability_alerts_enabled: true
 environments:
   - environment: production
-    wait_timer: 300               # 5 minute wait (max: 43200 = 12 hours)
-    can_admins_bypass: false      # Admins cannot bypass
-    prevent_self_review: true     # Cannot approve own deployments
+    wait_timer: 300
+    can_admins_bypass: false
+    prevent_self_review: true
     reviewers:
-      users: ["ljubon"]          # Max 6 combined users + teams
+      users: ["ljubon"]
       # teams: ["platform-team"]
     deployment_ref_policy:
       protected_branches_policy: true
@@ -41,6 +41,7 @@ environments:
     prevent_self_review: true
     reviewers:
       users: ["ljubon"]
+      teams: ["team1"]
     deployment_ref_policy:
       protected_branches_policy: false
       selected_branches_or_tags_policy:
