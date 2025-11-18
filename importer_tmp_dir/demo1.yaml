@@ -22,8 +22,6 @@ archived: false
 has_discussions: false
 topics:
   - demo-topic-1
-push_teams:
-  - team1
 vulnerability_alerts_enabled: true
 environments:
   - environment: production
