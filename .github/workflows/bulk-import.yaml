@@ -5,7 +5,7 @@ on:
 
 jobs:
   bulk-import-repos:
-    uses: ljubon-org/github-terraformer/.github/workflows/bulk-import.yaml@test-env
+    uses: ljubon-org/github-terraformer/.github/workflows/bulk-import.yaml@test-gcss-1135
     with:
       gcss_ref: test-env
     secrets:

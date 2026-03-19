@@ -9,7 +9,7 @@ jobs:
   drift-check:
     secrets:
       tfc_token: ${{ secrets.TFC_TOKEN }}
-    uses: ljubon-org/github-terraformer/.github/workflows/drift-check.yaml@test-env
+    uses: ljubon-org/github-terraformer/.github/workflows/drift-check.yaml@test-gcss-1135
     with:
-      gcss_ref: test-env
+      gcss_ref: test-gcss-1135
       tfc_org: "ljubo-demo" # FIXME: now
