@@ -1,9 +1,10 @@
-description: test import3
-visibility: private
+description: import1
+visibility: public
+homepage_url: https://example.com
 default_branch: main
 has_issues: true
 has_projects: true
-has_wiki: false
+has_wiki: true
 has_downloads: true
 allow_merge_commit: true
 allow_rebase_merge: true
@@ -19,4 +20,30 @@ delete_branch_on_merge: false
 is_template: false
 archived: false
 has_discussions: false
+topics:
+  - demo-topic-2
 vulnerability_alerts_enabled: true
+environments:
+  - environment: test
+    wait_timer: 300
+    can_admins_bypass: false
+    prevent_self_review: true
+    reviewers:
+      users:
+        - ljubon
+    deployment_policy:
+      policy_type: protected_branches
+  - environment: test3
+    wait_timer: 300
+    can_admins_bypass: false
+    prevent_self_review: true
+    reviewers:
+      users:
+        - ljubon
+    deployment_policy:
+      policy_type: selected_branches_and_tags
+      branch_patterns:
+        - main
+        - release/*
+      tag_patterns:
+        - v*
