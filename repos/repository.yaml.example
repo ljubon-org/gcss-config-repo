@@ -145,7 +145,7 @@ vulnerability_alerts_enabled: true
 # ENVIRONMENTS (Optional)
 # =============================================================================
 # Configure deployment environments with protection rules
-# Requires: feature_github_environment: true in import-config.yaml
+# Requires: features.github_environments: true in import-config.yaml
 #
 # DEPLOYMENT POLICY OPTIONS (mutually exclusive):
 #   1. policy_type: protected_branches            - Only protected branches can deploy
