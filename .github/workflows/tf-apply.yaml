@@ -8,10 +8,10 @@ on:
 
 jobs:
   terraform-apply:
-    uses: ljubon-org/github-terraformer/.github/workflows/tf-apply.yaml@test-env
+    uses: ljubon-org/github-terraformer/.github/workflows/tf-apply.yaml@test-gcss-1135
     with:
       commit_sha: ${{ github.sha }}
-      gcss_ref: test-env
+      gcss_ref: test-gcss-1135
       tfc_org: "ljubo-demo" # FIXME: now
     secrets:
       gh_token: ${{ secrets.GITHUB_TOKEN }}

@@ -9,10 +9,10 @@ on:
 
 jobs:
   terraform-plan:
-    uses: ljubon-org/github-terraformer/.github/workflows/tf-plan.yaml@test-env
+    uses: ljubon-org/github-terraformer/.github/workflows/tf-plan.yaml@test-gcss-1135
     with:
       commit_sha: ${{ github.event.workflow_run.head_sha }}
-      gcss_ref: test-env
+      gcss_ref: test-gcss-1135
       tfc_org: "ljubo-demo" # FIXME:
     secrets:
       app_private_key: ${{ secrets.APP_PRIVATE_KEY }}

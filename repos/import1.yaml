@@ -1,4 +1,4 @@
-description: demo1
+description: import1
 visibility: public
 homepage_url: https://example.com
 default_branch: main
@@ -21,10 +21,10 @@ is_template: false
 archived: false
 has_discussions: false
 topics:
-  - demo-topic-1
+  - demo-topic-2
 vulnerability_alerts_enabled: true
 environments:
-  - environment: production
+  - environment: test
     wait_timer: 300
     can_admins_bypass: false
     prevent_self_review: true
@@ -33,7 +33,7 @@ environments:
         - ljubon
     deployment_policy:
       policy_type: protected_branches
-  - environment: staging
+  - environment: test3
     wait_timer: 300
     can_admins_bypass: false
     prevent_self_review: true

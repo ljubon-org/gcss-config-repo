@@ -5,8 +5,8 @@ on:
 
 jobs:
   bulk-import-repos:
-    uses: ljubon-org/github-terraformer/.github/workflows/bulk-import.yaml@test-env
+    uses: ljubon-org/github-terraformer/.github/workflows/bulk-import.yaml@test-gcss-1135
     with:
-      gcss_ref: test-env
+      gcss_ref: test-gcss-1135
     secrets:
       app_private_key: ${{ secrets.APP_PRIVATE_KEY }}
