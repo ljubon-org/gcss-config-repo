@@ -25,14 +25,16 @@ topics:
 vulnerability_alerts_enabled: true
 environments:
   - environment: test
-    wait_timer: 300
+    wait_timer: 150
     can_admins_bypass: false
     prevent_self_review: true
     reviewers:
       users:
         - ljubon
     deployment_policy:
-      policy_type: protected_branches
+      policy_type: selected_branches_and_tags
+      branch_patterns:
+        - main
   - environment: test3
     wait_timer: 300
     can_admins_bypass: false
