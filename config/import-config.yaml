@@ -32,14 +32,18 @@ ignored_repos:
 # FEATURE FLAGS
 # =============================================================================
 #
-# Available feature flags:
+# Feature flags are grouped under the `features:` key.
+# Each flag controls opt-in importer behaviour. Default: false (disabled).
 #
-# feature_github_environment: Import GitHub repository environments
-#   - When enabled, the importer fetches and includes environment configurations
-#     (reviewers, wait timers, deployment branch policies, etc.) in generated YAML
-#   - Environment secrets are NEVER imported
-#   - Default: false
-#   - This ensures existing repos managed in code won't be affected unless explicitly enabled
+# Available features:
+#
+#   github_environments: Import GitHub repository environments
+#     - When enabled, the importer fetches and includes environment configurations
+#       (reviewers, wait timers, deployment branch policies, etc.) in generated YAML
+#     - Environment secrets are NEVER imported
+#     - Default: false
+#     - This ensures existing repos managed in code won't be affected unless explicitly enabled
 #
 
-feature_github_environment: true
+features:
+  github_environments: true
